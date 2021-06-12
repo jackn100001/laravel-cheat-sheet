@@ -6,10 +6,11 @@ URI. However, the paginator's `withPath` method allows you to customize the URI
 used by the paginator when generating links. For example, if you want the
 paginator to generate links like `http://example.com/admin/users?page=N`, you
 should pass `/admin/users` to the `withPath` method:
-<br><br>
-`$users = User::paginate(15);`
 <br>
-`$users->withPath('/admin/users');`
+```
+$users = User::paginate(15);
+$users->withPath('/admin/users');
+```
 
 ## Append accessors to Eloquent results
 Occasionally, when converting models to arrays or JSON, you may wish to add attributes that do not

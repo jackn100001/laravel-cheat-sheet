@@ -45,3 +45,19 @@ class User extends Model
     }
 }
 ```
+
+## Running external scripts
+```
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
+
+$process = new Process('python3 /path/to/script <additional arguments here>');
+$process->run();
+
+// executes after the command finishes
+if (!$process->isSuccessful()) {
+    throw new ProcessFailedException($process);
+}
+
+echo $process->getOutput();
+```

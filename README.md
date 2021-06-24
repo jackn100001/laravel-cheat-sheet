@@ -61,3 +61,22 @@ if (!$process->isSuccessful()) {
 
 echo $process->getOutput();
 ```
+
+
+## Cache functions
+```
+Cache::has('key'); # does key exist
+Cache::get(); # get the value of key
+Cache::pull('key'); # get and delete
+Cache::put('key',$amount, $minutes); # add/update
+Cache::add('key', 'value', $minutes); # Store If Not Present
+
+Cache::increment('key', $amount=1); # increase by $amount
+Cache::decrement('key', $amount=1); # decrease by $amount
+
+Cache::remember('users', $minutes, $default); # Retrieve & Store
+
+Cache::forever('key', 'value'); # perm store
+Cache::forget('key'); # remove perm
+Cache::flush(); # remove everything
+```

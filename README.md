@@ -80,3 +80,8 @@ Cache::forever('key', 'value'); # perm store
 Cache::forget('key'); # remove perm
 Cache::flush(); # remove everything
 ```
+
+## Run artisan command as daemon
+```
+$ php artisan command:name > /dev/null &
+```
